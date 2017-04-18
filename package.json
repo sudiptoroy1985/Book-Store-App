@@ -1,0 +1,26 @@
+{
+  "name": "todoapi",
+  "version": "1.0.0",
+  "description": "Backend api for todos based on node and express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudiptoroy1985/Todo-app-node-api.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "sudipto roy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudiptoroy1985/Todo-app-node-api/issues"
+  },
+  "homepage": "https://github.com/sudiptoroy1985/Todo-app-node-api#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

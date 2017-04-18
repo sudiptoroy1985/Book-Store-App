@@ -1,0 +1,24 @@
+{
+  "name": "lib",
+  "description": "Backend api for todos based on node and express",
+  "main": "index.js",
+  "authors": [
+    "sudipto roy"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
