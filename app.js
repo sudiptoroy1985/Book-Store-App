@@ -1,20 +1,51 @@
-var express = require('express');
+var express = require("express");
 
 var app = express();
 
-var port = 5000; 
+var port = process.env.PORT || 5000;
 
-app.use(express.static('public'));
-app.use(express.static('src/views'));
+var nav = [{
+                Link: '/Books',
+                Text: 'Book'
+            },
+            {
+                Link: '/Authors',
+                Text: 'Author'
+            },
+        ];
 
-app.get('/',function(req,res){
-    res.send("<b> Hello World ! </b>")
+
+var bookRouter = require('./src/routes/bookRoutes')(nav);
+
+app.use(express.static("public"));
+app.set('views', "./src/views");
+app.set('view engine', 'ejs');
+
+
+
+
+
+app.use('/Books',bookRouter);
+
+app.get('/', function (req, res) {
+    res.render('index', {
+        title: 'Hello from render in EJS',
+        nav: [{
+                Link: '/Books',
+                Text: 'Books'
+            },
+            {
+                Link: '/Authors',
+                Text: 'Authors'
+            },
+        ]
+    });
 });
 
-app.get('/books',function(req,res){
-    res.send("<b> Hello Books ! </b>")
+app.get('/books', function (req, res) {
+    res.send("<b> Hello Books ! </b>");
 });
 
-app.listen(port,function(err){
+app.listen(port, function (err) {
     console.log('running server on port ' + port);
 });
